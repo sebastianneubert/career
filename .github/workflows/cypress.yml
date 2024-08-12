@@ -1,5 +1,8 @@
 ---
-on: [push]
+on: 
+  push:
+    path-ignore:
+      - README.md
 
 name: 'Cypress tests'
 run-name: ${{ github.actor }} pushed to repo 🚀
