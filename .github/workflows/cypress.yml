@@ -1,0 +1,15 @@
+---
+on: [push]
+
+name: 'Cypress tests'
+run-name: ${{ github.actor }} pushed to repo 🚀
+
+jobs:
+  cypress-test-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 'latest'
+      - run: bun install
+      - run: bun x cypress run
