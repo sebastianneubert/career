@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 const sites = ['https://docs.cypress.io/']
 
 describe.each(sites)('check %s', (site) => {
