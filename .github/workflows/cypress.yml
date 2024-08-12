@@ -1,8 +1,8 @@
 ---
 on: 
   push:
-    path-ignore:
-      - README.md
+    paths-ignore:
+      - 'README.md'
 
 name: 'Cypress tests'
 run-name: ${{ github.actor }} pushed to repo 🚀
@@ -15,5 +15,5 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: 'latest'
-      - run: bun install
-      - run: bun x cypress run
+      - run: 'bun install'
+      - run: 'bun x cypress run'

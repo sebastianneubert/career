@@ -9,10 +9,10 @@ driven strategies with a focus on risk-based decision-making and team support.
 
 - simple cypress test running on github action
 
-run on your own:
+run on your local machine:
 
 ```bash
-# requirement: install bun.sh
+# requirement: install bun.sh and clone the repo
 bun x cypress open
 ```
 
@@ -24,4 +24,4 @@ bun x cypress open
 1. cypress as test runner
 1. cypress-each as cypress plugin
 1. using cypress-testing-library as cypress plugin to select by roles
-1. using github-actions to trigger test runs in github
+1. using github-actions to trigger test runs in github, ignoring README changes
