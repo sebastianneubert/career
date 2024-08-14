@@ -1,8 +1,9 @@
-const sites = ['https://docs.cypress.io/']
+const siteUnderTest = Cypress.env('SITE_UNDER_TEST')
 
-describe.each(sites)('check %s', (site) => {
+describe(`check ${siteUnderTest}`, () => {
   beforeEach(() => {
-    cy.visit(site)
+    cy.log(siteUnderTest)
+    cy.visit(siteUnderTest)
   })
 
   it('should have a career link', () => {
