@@ -3,6 +3,14 @@ on:
   push:
     paths-ignore:
       - 'README.md'
+  workflow_dispatch:
+    inputs:
+      site:
+        type: choice
+        description: website to test
+        options: 
+        - 'https://docs.cypress.io/'
+        - 'https://okla.com'
 
 name: 'Cypress tests'
 run-name: ${{ github.actor }} pushed to repo 🚀
@@ -10,6 +18,8 @@ run-name: ${{ github.actor }} pushed to repo 🚀
 jobs:
   cypress-test-run:
     runs-on: ubuntu-latest
+    env:
+      CYPRESS_SITE_UNDER_TEST: ${{ github.event.inputs.site }}
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
