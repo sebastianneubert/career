@@ -2,12 +2,14 @@
 
 ## About me
 
-Experienced Quality Manager adept in overseeing automated testing, QA operations, and implementing advanced testing tools. Develops technology-
-driven strategies with a focus on risk-based decision-making and team support.
+Experienced Quality Manager adept in overseeing automated testing, QA operations, and implementing advanced testing tools. 
+Develops technology-driven strategies with a focus on risk-based decision-making and team support.
+
+[Read more](https://flowcv.me/sebastian-neubert-2k)
 
 ## About this Repository
 
-- simple cypress test running on github action
+- Simple cypress tests running on Github action
 
 run on your local machine:
 
