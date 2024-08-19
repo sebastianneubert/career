@@ -9,8 +9,7 @@ on:
         type: choice
         description: website to test
         options: 
-        - 'https://docs.cypress.io/'
-        - 'https://okla.com'
+        - 'https://flowcv.me/sebastian-neubert-2k'
 
 name: 'Cypress tests'
 run-name: ${{ github.actor }} pushed to repo 🚀
