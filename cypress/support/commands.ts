@@ -3,18 +3,30 @@
 
 import '@testing-library/cypress/add-commands'
 
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      getButton(buttonText: string): Chainable<JQuery>
 
+      checkCertificate(url: string, daysBeforeWarning?: number): Chainable<void>
+    }
+  }
+}
+
+Cypress.Commands.add('getButton', (buttonText) => {
+  const regEx = new RegExp(buttonText, 'i')
+  cy.findByRole('button', { name: regEx })
+})
+
+Cypress.Commands.add('checkCertificate', (url, daysBeforeWarning = 14) => {
+  const hostname = new URL(url).hostname
+
+  cy.task('getCertificate', hostname)
+    .its('valid_to')
+    .then((validTo) => {
+      cy.log(`Certificate expires on ${validTo}`)
+      const expiryDate = new Date(validTo).getTime()
+      const warningDate = new Date().getTime() + (daysBeforeWarning * 24 * 60 * 60 * 1000)
+      expect(expiryDate, `Certificate expire within next ${daysBeforeWarning} days`).to.be.greaterThan(warningDate)
+    })
+})

@@ -21,6 +21,10 @@ describe(`check ${siteUnderTest}`, () => {
     })
   })
 
+  it('Should have a valid ssl certificate', ()=>{
+    cy.checkCertificate(siteUnderTest)
+  })
+
   it('Should see button to career', () => {
     cy.findByRole('link', {name: /career project/i})
       .should('be.visible')

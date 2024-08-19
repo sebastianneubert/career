@@ -6,7 +6,12 @@ module.exports = defineConfig({
       SITE_UNDER_TEST: 'https://flowcv.me/sebastian-neubert-2k'
     },
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      on('task', {
+        getCertificate: (host) => {
+          const sslCertificate = require('get-ssl-certificate')
+          return sslCertificate.get(host)
+        }
+      })
     },
   },
 });

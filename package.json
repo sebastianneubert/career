@@ -1,11 +1,12 @@
 {
   "dependencies": {
+    "typescript": "^5.5.4",
     "cypress": "13.13.3",
     "cypress-each": "^1.14.0",
-    "typescript": "^5.5.4"
+    "@testing-library/cypress": "^10.0.2",
+    "get-ssl-certificate": "^2.3.3"
   },
   "devDependencies": {
-    "@testing-library/cypress": "^10.0.2",
     "prettier": "^3.3.3"
   }
 }
