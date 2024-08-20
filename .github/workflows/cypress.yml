@@ -12,7 +12,7 @@ on:
         - 'https://flowcv.me/sebastian-neubert-2k'
 
 name: 'Cypress tests'
-run-name: ${{ github.actor }} pushed to repo 🚀
+run-name: '${{ github.actor }} pushed "${{ github.event.head_commit.message }}" 🚀'
 
 jobs:
   cypress-test-run:
@@ -29,5 +29,25 @@ jobs:
       - name: Store HTML report
         uses: actions/upload-artifact@v4
         with:
-          name: mochawesome-report
+          name: github-pages
           path: cypress/reports/html/index.html
+
+  deploy:
+    needs: cypress-test-run
+    if: github.ref == 'refs/heads/main'
+    
+    permissions:
+      pages: write
+      id-token: write
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
