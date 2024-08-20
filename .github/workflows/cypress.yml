@@ -34,7 +34,8 @@ jobs:
 
   deploy:
     needs: cypress-test-run
-
+    if: github.ref == 'refs/heads/main'
+    
     permissions:
       pages: write
       id-token: write
