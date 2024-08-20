@@ -12,7 +12,7 @@ on:
         - 'https://flowcv.me/sebastian-neubert-2k'
 
 name: 'Cypress tests'
-run-name: '${{ github.actor }} pushed "${{ github.event.pull_request.title }}" 🚀'
+run-name: '${{ github.actor }} pushed "${{ github.event.head_commit.message }}" 🚀'
 
 jobs:
   cypress-test-run:
@@ -31,6 +31,8 @@ jobs:
         with:
           name: github-pages
           path: cypress/reports/html/index.html
+      - name: Upload HTML report for pages
+        uses: actions/upload-pages-artifact
 
   deploy:
     needs: cypress-test-run
