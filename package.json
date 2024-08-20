@@ -1,10 +1,12 @@
 {
+  "type": "module",
   "dependencies": {
-    "typescript": "^5.5.4",
+    "@testing-library/cypress": "^10.0.2",
     "cypress": "13.13.3",
     "cypress-each": "^1.14.0",
-    "@testing-library/cypress": "^10.0.2",
-    "get-ssl-certificate": "^2.3.3"
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "get-ssl-certificate": "^2.3.3",
+    "typescript": "^5.5.4"
   },
   "devDependencies": {
     "prettier": "^3.3.3"

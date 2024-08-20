@@ -28,3 +28,4 @@ bun x cypress open
 1. using cypress-testing-library as cypress plugin to select by roles
 1. adding custom commands for selecting buttons and checking https cert expiry
 1. using github-actions to trigger test runs in github, ignoring README.md changes
+1. add HTML report for the tests and make it downloadable via artifacts

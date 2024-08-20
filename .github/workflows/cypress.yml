@@ -26,3 +26,8 @@ jobs:
           bun-version: 'latest'
       - run: 'bun install'
       - run: 'bun x cypress run'
+      - name: Store HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: cypress/reports/html/index.html
