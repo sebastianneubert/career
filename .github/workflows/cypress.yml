@@ -31,8 +31,6 @@ jobs:
         with:
           name: github-pages
           path: cypress/reports/html/index.html
-      - name: Upload HTML report for pages
-        uses: actions/upload-pages-artifact
 
   deploy:
     needs: cypress-test-run
