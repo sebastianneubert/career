@@ -5,7 +5,9 @@ stages:
 
 cypress-tests:
   stage: 'test'
-  image: 'cypress/included:latest'
+  image:
+    name: 'cypress/included:latest'
+    entrypoint: ['']
   tags:
     - gitlab-org-docker
   before_script:
