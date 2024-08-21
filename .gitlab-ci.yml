@@ -1,0 +1,33 @@
+---
+stages:
+  - test
+  - deploy
+
+cypress-tests:
+  stage: 'test'
+  image: 'cypress/included:latest'
+  tags: docker
+  before-script:
+    - curl -fsSL https://bun.sh/install | bash
+    - bun install
+  script:
+    - bun x cypress run
+  after-script:
+    - mkdir -p public
+    - cp cypress/reports/html/index.html public
+  artifacts:
+    paths:
+      - ./cypress/screenshots
+      - ./cypress/videos
+      - ./cypress/reports
+      - public
+    when: always
+    expire: 1 week
+
+pages:
+  stage: deploy
+  script:
+    - echo "Deploying HTML reports to ${CI_PAGES_URL}"
+  artifacts:
+    paths:
+      - public/index.html

@@ -3,6 +3,7 @@ on:
   push:
     paths-ignore:
       - 'README.md'
+      - '.gitlab-ci.yaml'
   workflow_dispatch:
     inputs:
       site:
