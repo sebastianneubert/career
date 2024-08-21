@@ -23,7 +23,7 @@ cypress-tests:
       - ./cypress/reports
       - public
     when: always
-    expire: 1 week
+    expire_in: 1 week
 
 pages:
   stage: deploy
