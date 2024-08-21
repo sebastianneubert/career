@@ -29,3 +29,5 @@ bun x cypress open
 1. adding custom commands for selecting buttons and checking https cert expiry
 1. using github-actions to trigger test runs in github, ignoring README.md changes
 1. add HTML report for the tests and make it downloadable via artifacts
+1. add [Gitlab repository](https://gitlab.com/sebastianneubert/career) and a CI/CD Pipeline to deploy HTML report to [Gitlab Page](https://career-sebastianneubert-ffc27c129511b44eb40d51ef1da9b8f9881caef.gitlab.io/)
+ 
