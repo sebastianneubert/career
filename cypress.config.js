@@ -6,7 +6,7 @@ export default defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
-    reportPageTitle: 'SPVOS Frontend Test Report',
+    reportPageTitle: 'Sebastian Neubert Career Project',
     embeddedScreenshots: true,
     inlineAssets: true,
     saveAllAttempts: false,
