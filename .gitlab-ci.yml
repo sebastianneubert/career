@@ -7,12 +7,12 @@ cypress-tests:
   stage: 'test'
   image: 'cypress/included:latest'
   tags: docker
-  before-script:
+  before_script:
     - curl -fsSL https://bun.sh/install | bash
     - bun install
   script:
     - bun x cypress run
-  after-script:
+  after_script:
     - mkdir -p public
     - cp cypress/reports/html/index.html public
   artifacts:
