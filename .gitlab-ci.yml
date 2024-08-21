@@ -7,7 +7,7 @@ cypress-tests:
   stage: 'test'
   image: 'cypress/included:latest'
   tags:
-    - docker
+    - gitlab-org-docker
   before_script:
     - curl -fsSL https://bun.sh/install | bash
     - bun install
