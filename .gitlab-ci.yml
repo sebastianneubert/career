@@ -5,10 +5,11 @@ stages:
 
 cypress-tests:
   stage: 'test'
-  image: 'oven/bun:alpine'
+  image: 'cypress/included:latest'
   tags:
     - gitlab-org-docker
   before_script:
+    - npm install bun --global
     - bun install
   script:
     - bun x cypress run
