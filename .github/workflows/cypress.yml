@@ -1,5 +1,7 @@
 ---
-on: 
+on:
+  schedule: 
+    - cron: "0 10 * * *"
   push:
     paths-ignore:
       - 'README.md'
