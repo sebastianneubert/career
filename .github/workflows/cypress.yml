@@ -15,7 +15,7 @@ on:
         - 'https://flowcv.me/sebastian-neubert-2k'
 
 name: 'Cypress tests'
-run-name: '${{ github.actor }} pushed "${{ github.event.head_commit.message }}" 🚀'
+run-name: '${{ github.actor }} pushed "${{ github.event.workflow_run.head_commit.message }}" 🚀'
 
 jobs:
   cypress-test-run:
