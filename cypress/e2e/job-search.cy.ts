@@ -12,6 +12,7 @@ describe(
       'https://jobs.ashbyhq.com/polygon-labs',
       'https://jobs.lever.co/ondofinance',
       'https://jobs.ashbyhq.com/chainlink-labs',
+      'https://boards.greenhouse.io/omnifdn',
       //'https://remoteok.com/',
     ]
 
